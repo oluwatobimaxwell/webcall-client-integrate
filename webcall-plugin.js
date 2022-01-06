@@ -66,7 +66,7 @@ class WebCallClient {
 
 		scripts.forEach(e => {appendScript(e)});
 
-		this.serverUrl = "http://172.20.10.4:3000?";
+		this.serverUrl = "https://webcaller.netlify.app?";
 		this.transitionTime = 0.5;
 		this.openState =  false;
 		
