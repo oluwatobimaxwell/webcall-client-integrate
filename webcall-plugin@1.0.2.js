@@ -103,7 +103,7 @@ class WebCallClient {
 
 			this.wrapMain = document.createElement("div");
 			this.wrapMain.id = "01-call-i-phone"
-			this.wrapMain.style = `transition: all ${this.transitionTime}s ease-in-out 0s; cursor: pointer; position: fixed;  width: ${window.innerWidth > 800 ? this.dimensions.defaultWidth : "100%"}; overflow: hidden; top: ${this.dimensions.top()}; right:  0px; height: ${this.dimensions.height}; z-index: 1000000000000000000000000000000 `;
+			this.wrapMain.style = `transition: all ${this.transitionTime}s ease-in-out 0s; cursor: pointer; position: fixed;  width: ${window.innerWidth > 800 ? this.dimensions.defaultWidth : "100%"}; overflow: hidden; top: ${this.dimensions.top()}; right:  0px; bottom: 1rem; height: ${this.dimensions.height}; z-index: 1000000000000000000000000000000 `;
 			
 			this.wrap = document.createElement("div");
 			this.wrap.style = "overflow: hidden; background: #000; border-radius: 50px; padding: 1rem;position: absolute;top: 5px;bottom: 5px;left: 5px;right: 5px; box-shadow: 0 14px 26px -12px rgb(0, 0, 0),0 4px 23px 0px rgba(0,0,0,.12),0 8px 10px -5px rgb(40, 40, 43); margin: 1rem;";
