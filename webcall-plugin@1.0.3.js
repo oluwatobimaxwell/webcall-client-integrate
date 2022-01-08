@@ -16,7 +16,24 @@ const appendStyle = (styleToAppend) => {
 };
 
 
-const server = "https://webcaller.netlify.app?"//"http://172.20.10.4:3000?";
+const getTabId = () => {
+	var iPageTabID = sessionStorage.getItem("tabID");
+      // if it is the first time that this page is loaded
+    if (!iPageTabID) {
+        var iLocalTabID = localStorage.getItem("tabID");
+          // if tabID is not yet defined in localStorage it is initialized to 1
+          // else tabId counter is increment by 1
+        iPageTabID = (iLocalTabID == null) ? 1 : Number(iLocalTabID) + 1;
+          // new computed value are saved in localStorage and in sessionStorage
+        localStorage.setItem("tabID",iPageTabID);
+        sessionStorage.setItem("tabID",iPageTabID);
+		return iPageTabID;
+    }
+	return iPageTabID;
+}
+
+const server = "https://webcaller.netlify.app?";
+// const server = "http://172.20.10.4:3000?";
 
 const getImageUrl = () => {
 	const images = document.getElementsByTagName("img");
@@ -94,8 +111,8 @@ class WebCallClient {
 				website: window.location.hostname,
 				currentPage: `${window.location.origin}${window.location.pathname}`,
 				defaultImage: getImageUrl(),
-				pageTitle: document.title
-				
+				pageTitle: document.title,
+				tabId: getTabId()
 			};
 			this.params = new URLSearchParams(params).toString();
 
