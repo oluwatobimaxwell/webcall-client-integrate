@@ -546,7 +546,7 @@ function setUpView() {
 	for (let i = 0; i < scripts.length; i++) {
 		let item = scripts.item(i);
 		let src = item.getAttribute("src");
-		if (src.includes("initWebCall=true") && src.includes("clientId=")) {
+		if (src?.includes("initWebCall=true") && src?.includes("clientId=")) {
 			const clientId = new URLSearchParams(src).get("clientId");
 			const kp = new WebCallClient();
 			kp.init({ clientId });
